@@ -1,0 +1,33 @@
+<h2>User List</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+          <caption class="text-center">users </caption>
+          <thead>
+            <tr>
+              <th>User Id</th>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Profile</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor=" let user of userls" >
+              <td>{{user.user_id}}</td>
+              <td>{{user.user_name}}</td>
+              <td>{{user.user_email}}</td>
+              <td><img src="{{user.picture}}" style="height:50px;">  </td>
+            </tr>
+            
+          </tbody>
+         
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
+

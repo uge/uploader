@@ -1,0 +1,32 @@
+<h2>Image Records</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+      
+          <thead>
+            <tr>
+              <th>Img Id</th>
+              <th> uploaded by</th>
+              <th>Description</th>
+             <th>Picture</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor=" let imglss of imgls" >
+              <td>{{imglss.img_id}}</td>
+              <td>{{imglss.uploaded_by}}</td>
+              <td>{{imglss.img_des}}</td>
+              <td><a href = "http://localhost:3000{{imglss.img}}" target="_blank"><img src="http://localhost:3000{{imglss.img}}" style="height:50px; width=150px" /></a> </td>
+            </tr>
+            
+          </tbody>
+         
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
+

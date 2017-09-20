@@ -1,0 +1,35 @@
+
+<app-navbar></app-navbar>
+<h4 *ngIf="auth.isAuthenticated()">
+  You are logged in!
+
+</h4>
+<h4 *ngIf="!auth.isAuthenticated()">
+  You are not logged in! Please <a (click)="auth.login()">Log In</a> to continue.
+
+</h4>
+<div class="container">  
+    <form (ngSubmit)="studentSubmit()" #addform="ngForm" *ngIf="auth.isAuthenticated()">   
+        <div class="form-group"> 
+          <label for="name">Email</label>
+          <input type="text" [(ngModel)]="model.email" name="email" class="form-control" id="email" #email="ngModel"> 
+        </div>  
+         <div class="form-group"> 
+          <label for="name">Title</label>
+          <input type="text" [(ngModel)]="model.title" name="title" class="form-control" id="title" #title="ngModel"> 
+         <div [hidden]="title.valid || title.pristine" class="alert alert-danger"> Title is required </div> 
+        </div> 
+        <div class="form-group"> 
+          <label for="name">Description</label>
+          <input type="text" [(ngModel)]="model.description" name="description" class="form-control" id="description" #description="ngModel"> 
+         <div [hidden]="description.valid || description.pristine" class="alert alert-danger"> descriptionr is required </div> 
+        </div> 
+        <div class="form-group">
+          <input type="file" name="client_img" required (change)="fileChange(input)" #input />
+        </div>  
+        <div> 
+          <img [attr.src]='file_srcs[0]' alt="" /> 
+        </div> 
+        <button type="submit" class="btn btn-default form-control" [disabled]="!addform.form.valid">Submit</button> 
+    </form>  
+</div>  
